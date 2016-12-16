@@ -1,5 +1,9 @@
 <?php
-define("BASE_URL","http://www.tutorialwebz.com");
+require_once 'wp-load.php';
+$base = site_url();
+
+define("BASE_URL",$base );
+
 $myurl = strlen($_SERVER['QUERY_STRING']) ? basename($_SERVER['PHP_SELF'])."?".$_SERVER['QUERY_STRING'] : basename($_SERVER['PHP_SELF']);
 $base_url = BASE_URL."/wp-json/wp/v2/posts";
 $content = isset($_GET['with_content'])?$_GET['with_content']:0;
